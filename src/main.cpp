@@ -1,6 +1,6 @@
-#include "stdio.h"
+#include <spdlog/spdlog.h>
 
-int main()
-{
-    printf("Hello World!\n");
+int main() {
+    spdlog::info("Hello from spdlog!");
+    return 0;
 }
