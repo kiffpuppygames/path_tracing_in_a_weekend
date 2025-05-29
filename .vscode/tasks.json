@@ -1,0 +1,57 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C/C++: clang++ build main",
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        "-std=c++23",        
+        "-g",
+        "-Wall",
+        "${workspaceFolder}/src/main.cpp",
+        "-o",
+        "${workspaceFolder}/bin/debug/linux/main"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "Markdown",
+        "fileLocation": ["absolute"],
+        "pattern": [
+            {
+                "regexp": "^Converting:\\\\s+(.*)$",
+                "kind": "location",
+                "file": 1
+            },
+            {
+                "regexp": "l.(\\\\d+)\\\\s(.*):(.*)$",
+                "line": 1,
+                "severity": 2,
+                "message": 3
+            }
+        ]        
+      }
+    },
+    // {
+    //   "label": "C/C++: clang++ build active file",
+    //   "type": "shell",
+    //   "command": "clang++",
+    //   "args": [
+    //     "-std=c++23",        
+    //     "-g",
+    //     "-Wall",
+    //     "${file}",
+    //     "-o",
+    //     "${fileDirname}/${fileBasenameNoExtension}"
+    //   ],
+    //   "group": {
+    //     "kind": "build",
+    //     "isDefault": true
+    //   },
+    //   "problemMatcher": ["$gcc"]
+    // }
+  ]
+}
